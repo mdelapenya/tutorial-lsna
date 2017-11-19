@@ -3,7 +3,9 @@
  */
 
 // Paste Redirect code below //
-
+if (WeDeploy.auth(address.auth).currentUser == null) {
+	document.location.href = './index.html';
+}
 // Paste Redirect code above //
 
 /**
