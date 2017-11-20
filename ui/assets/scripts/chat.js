@@ -37,7 +37,18 @@ function onresize() {
  */
 
 // Paste Get Old Messages code below //
-
+WeDeploy
+	.data(address.data)
+	.auth(WeDeploy.auth(address.auth).currentUser)
+	.orderBy('id', 'asc')
+	.limit(100)
+	.get('messages')
+	.then(function(result) {
+		var messages = result;
+		for (var i = 0; i < messages.length; i++) {
+			appendMessage(messages[i]);
+		}
+	});
 // Paste Get Old Messages code above //
 
 /**
