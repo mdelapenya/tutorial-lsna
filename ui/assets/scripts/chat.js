@@ -76,7 +76,15 @@ function newMessage(e) {
 		};
 
 // Paste Save New Message code below //
-
+		WeDeploy
+			.data(address.data)
+			.auth(WeDeploy.auth(address.auth).currentUser)
+			.create('messages', data)
+			.then(function(response) {
+				input.value = '';
+				conversation.scrollTop = conversation.scrollHeight;
+				appendMessage(data);
+			});
 // Paste Save New Message code above //
 	}
 
